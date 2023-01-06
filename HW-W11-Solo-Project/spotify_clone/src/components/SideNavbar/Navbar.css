@@ -1,0 +1,25 @@
+html,
+body {
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+.spotify-icon {
+  width: 50px;
+  height: 50px;
+  margin: 10px;
+}
+
+.navbar-nav {
+  height: 100vh;
+  width: 20%;
+  font-weight: 600;
+  background-color: black;
+  color: white;
+}
+
+.onFocusNav:hover {
+  background-color: #868686;
+  color: black;
+}
