@@ -12,24 +12,25 @@ const options = {
 const Artists = () => {
   const [artists, setArtists] = useState([]);
 
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const res = await fetch(
-          "https://striveschool-api.herokuapp.com/api/deezer/artist/queen",
-          options
-        );
+  const fetchData = async () => {
+    try {
+      const res = await fetch(
+        "https://striveschool-api.herokuapp.com/api/deezer/artist/queen",
+        options
+      );
+      if (res.ok) {
         const data = await res.json();
-        const artists = data.data;
-
-        setArtists(artists);
         console.log(data);
-      } catch (error) {
-        console.log(error);
+        setArtists(data);
+        console.log(artists);
+      } else {
+        console.log("error");
       }
+    } catch (error) {
+      console.log(error);
     }
     fetchData();
-  }, []);
+  };
 
   return (
     <div className="artists">
